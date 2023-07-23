@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from . import urls
-from django.contrib.auth import views
+from django.contrib.auth import views as VW
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
@@ -14,6 +14,6 @@ urlpatterns = [
     path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
     path('comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
     path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
-    path('accounts/login/', views.LoginView.as_view(), name='login'),
-    path('accounts/logout/', views.LogoutView.as_view(next_page='/'), name='logout'),
+    path('accounts/login/', VW.LoginView.as_view(), name='login'),
+    path('accounts/logout/', VW.LogoutView.as_view(next_page='/'), name='logout'),
 ]

@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from . import urls
-from django.contrib.auth import views as VW
+from django.contrib.auth import views as VW # adding this here resolves the login error I was getting... but the site still doesn't look like it's supposed to. No idea why.
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
